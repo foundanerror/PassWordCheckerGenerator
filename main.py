@@ -1,5 +1,5 @@
 
-import random
+import random,pyperclip
 Mode = str(input('Chose Mode Please (Password Generator, Password Checker): '))
 tab = ['a','b','c','d','e',"f","g","h","i","j","k","l","m","n","o",'p','[','#','%','$','1','2','A','B','C','D','E']
 
@@ -18,7 +18,9 @@ def gen():
         new = ''
         for i in range(0, int(random.randint(9,16))):
             new += str(mixed[random.randint(1,len(mixed)-1)])
+        pyperclip.copy(new)
+        paste = pyperclip.paste()
         return new
 
-print(gen())
+print(gen(),"Copied to ClipBoard")
 
